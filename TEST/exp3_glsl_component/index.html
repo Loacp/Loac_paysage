@@ -1,0 +1,56 @@
+<!-- https://github.com/pbayer8/aframe-glsl-component -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/pbayer8/aframe-glsl-component/master/main.js"></script>
+    <!-- <script src="./main.js"></script> -->
+</head>
+
+<body>
+    <a-scene fog="type:linear;near:2;far:15;">
+
+        <a-assets>
+            <img src="images/floral.jpg" id="floral" />
+            <img src="images/couch.png" id="couch" />
+            <img src="images/scene.jpg" id="sky" />
+            <img src="images/grass.png" id="grass" />
+        </a-assets>
+
+        <a-sphere position="0 1.4 -2" glsl-standard="
+                    envMap:#sky;
+                    map:#floral;
+                    normalMap:#couch;
+                    metalness:.5;" segments-height="128" segments-width="128">
+        </a-sphere>
+
+    </a-scene>
+
+    <script id="vertUniformsGLSL" type="x-shader/x-fragment">
+        //add vertex shader uniforms, varyings and functions here:
+        varying float wave1;
+        varying float wave2;
+    </script>
+    <script id="vertModsGLSL" type="x-shader/x-fragment">
+        //modify or reassign the finalPosition vec3 here:
+        wave1 = sin(finalPosition.y*5.+seconds*2.);
+        wave2 = cos(finalPosition.x*9.+seconds*3.);
+        finalPosition.x += .1*wave1;
+        finalPosition.z += .1* wave2;
+    </script>
+    <script id="fragUniformsGLSL" type="x-shader/x-fragment">
+        //add fragment shader uniforms, varyings and functions here:
+        varying float wave1;
+        varying float wave2;
+    </script>
+    <script id="fragModsGLSL" type="x-shader/x-fragment">
+        //modify or reassign the finalColor vec3 here:
+        finalColor.r += min(wave1,0.);
+        finalColor.b += wave2;
+    </script>
+    
+</body>
+
+</html>
