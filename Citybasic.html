@@ -1,13 +1,9 @@
 !DOCTYPE html>
 <html lang="fr">
 	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-
-		<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
-		<script src="https://rawgit.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+		<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.loaders.min.js"></script>
+                <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
 		<script>
 	      	AFRAME.registerComponent('loaded', {
@@ -44,7 +40,9 @@
 						>
 
 			 </a-entity>
-
+			 
+		   <a-sky color="black"></a-sky>
+			
 			 <a-light type="spot" intensity="2" position="-4.57035 7.19075 -5.59563" light="intensity: 5; color: #ff9500; castShadow: true; angle: 67.49; penumbra: 1; groundColor: #ffffff; shadowCameraBottom: -4.27" rotation="-30.277954683688353 56.40368422606363 -90.23913385971926" visible=""></a-light>
 
 			 <a-light type="spot" intensity="2" position="-0.13418 4.09993 -6.96672" light="intensity: 3; color: #ff9500; castShadow: true; angle: 67.49; penumbra: 1; groundColor: #ffffff; shadowCameraBottom: -4.27" rotation="-56.88611468956378 -178.59896615140943 129.43861437138966" visible=""></a-light>
@@ -58,9 +56,8 @@
 			 <a-entity light="color: #6b5200; intensity: 0.29; type: directional" position="10.14 101.3 -366.7"></a-entity>
 
 			 <a-entity light="color: #ffa200; intensity: 0.22; type: point; castShadow: true" position="0 2.943 0"></a-entity>
-			 
-		   <a-sky color="black"></a-sky>
-			   <a-light type="spot" intensity="2" position="-4.57035 7.19075 -5.59563" light="type: spot; intensity: 5; color: #ff7b00; castShadow: true; angle: 41.38; penumbra: 0.87; groundColor: #ffffff" rotation="-30.277954683688353 56.40368422606363 -90.23913385971926"></a-light>
+			
+			 <a-light type="spot" intensity="2" position="-4.57035 7.19075 -5.59563" light="type: spot; intensity: 5; color: #ff7b00; castShadow: true; angle: 41.38; penumbra: 0.87; groundColor: #ffffff" rotation="-30.277954683688353 56.40368422606363 -90.23913385971926"></a-light>
     	</a-scene>
 
   </body>
